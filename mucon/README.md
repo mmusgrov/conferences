@@ -39,6 +39,15 @@ Now deploy the service:
 mvn fabric8:deploy -Popenshift -f flight/pom.xml
 ```
 
+or use OpenShift online:
+
+```bash
+https://manage.openshift.com/account/index
+create the storage stm-vertx-demo-flight-logs
+oc login -u rhn-engineering-mmusgrov --server=https://console.starter-us-west-1.openshift.com
+mvn fabric8:deploy -Popenshift -f flight/pom.xml
+```
+
 and create a flight booking:
 
 ```bash
@@ -75,4 +84,16 @@ book a theatre and taxi. Abort the theatre booking and observe that the taxi is 
 ```bash
 curl -X POST http://localhost:8080/api/trip/Apollofail/XYZ
 ```
+
+@Nested
+  starts a nest txn which commits after the method exits (NB it never aborts)
+
+@TopLevel
+  starts a new txn which commits after the method exits (NB it never aborts)
+
+## Using openshift online:
+
+https://manage.openshift.com/account/index
+
+https://api.starter-us-west-1.openshift.com/oauth/authorize?client_id=openshift-web-console&response_type=code&state=eyJ0aGVuIjoiLyIsIm5vbmNlIjoiMTUwOTY0MTM3MDY2NS0zNDg2OTA1Njc5MjYzOTA0OTAyOTE4ODc2ODM3NTQxMDEwNTg5MzMyMTg0MTIzOTg0MTEwMDEzNzgzMDM3Mjg4NTQwMjgxMzU4MTA3ODc5In0&redirect_uri=https%3A%2F%2Fconsole.starter-us-west-1.openshift.com%2Fconsole%2Foauth
 
