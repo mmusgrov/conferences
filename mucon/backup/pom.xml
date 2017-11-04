@@ -34,6 +34,16 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
     </dependency>
+      <dependency>
+          <groupId>org.jboss.narayana.stm</groupId>
+          <artifactId>stm</artifactId>
+          <version>5.7.1.Final</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.logging</groupId>
+          <artifactId>jboss-logging</artifactId>
+          <version>3.3.1.Final</version>
+      </dependency>
   </dependencies>
   <build>
     <plugins>
