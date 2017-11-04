@@ -7,7 +7,7 @@
   <version>1.0</version>
   <properties>
     <vertx.version>3.4.2</vertx.version>
-    <vertx.verticle>MainVerticle</vertx.verticle>
+    <vertx.verticle>io.narayana.mucon.MainVerticle</vertx.verticle>
     <fabric8-vertx-maven-plugin.version>1.0.7</fabric8-vertx-maven-plugin.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
