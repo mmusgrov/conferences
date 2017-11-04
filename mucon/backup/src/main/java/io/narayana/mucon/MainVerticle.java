@@ -1,6 +1,7 @@
 package io.narayana.mucon;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Vertx;
 import io.vertx.ext.web.Router;
 
@@ -11,7 +12,7 @@ public class MainVerticle extends AbstractVerticle {
     public static void main(String[] args) {
         flightService = new FlightServiceImpl();
 
-        Vertx.vertx().deployVerticle(MainVerticle.class.getName());
+        Vertx.vertx().deployVerticle(MainVerticle.class.getName(), new DeploymentOptions().setInstances(10));
     }
 
     @Override
