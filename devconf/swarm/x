@@ -1,0 +1,1000 @@
+  162  pwd
+  163  find rts/lra/ -type f -exec grep -l "lra.http.port" {} \;
+  164  vi rts/lra/lra-test/src/test/java/io/narayana/lra/participant/SpecIT.java rts/lra/lra-client/src/main/java/io/narayana/lra/client/LRAClient.java
+  165  vi rts/lra/lra-client/pom.xml 
+  166  vi rts/lra/*/pom.xml
+  167  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  168  vi ArjunaJTA/jta/target/surefire-reports/com.hp.mwtests.ts.jta.stats.StatSuccessUnitTest*
+  169  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debug
+  170  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  171  pwd
+  172  find . -name \*.java -exec grep -l aultType {} \;
+  173  pwd
+  174  ls ..
+  175  find ../quickstart -name \*.java -exec grep -l aultType {} \;
+  176  vi ../quickstart/interop.recovery/tmp--/narayana/ArjunaJTA/jta/tests/classes/com/hp/mwtests/ts/jta/commitmarkable/integration/CMRIntegrationTest.java ../quickstart/ArjunaJTA/recovery/src/main/java/org/jboss/narayana/jta/quickstarts/util/DummyXAResource.java
+  177  find ArjunaJTA/ -name DemoDummy\*.java
+  178  cp ../quickstart/ArjunaJTA/recovery/src/main/java/org/jboss/narayana/jta/quickstarts/util/DummyXAResource.java ArjunaJTA/jta/tests/classes/com/hp/mwtests/ts/jta/stats
+  179  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debug
+  180  git status
+  181  git diff rts/lra/lra-client/pom.xml
+  182  git diff rts/lra/lra-client/src/main/java/io/narayana/lra/client/LRAClient.java
+  183  git co rts/lra/lra-client/src/main/java/io/narayana/lra/client/LRAClient.java
+  184  git diff rts/lra/lra-client/pom.xml
+  185  git add -u
+  186  git commit -m JBTM-1488
+  187  git log > x
+  188  vi x
+  189  git co 41b827234a532a37f4c5c424319acc43e8b4c49f
+  190  find ArjunaCore/ -name BasicAction.java
+  191  find . -name BasicAction.java
+  192  pwd
+  193  vi x
+  194  git co e841ba7aca44304c7527da3245593763a5f0f22c
+  195  find . -name BasicAction.java
+  196  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  197  vi x
+  198  git co da1610008ce01c936ea3c47756ad32e79cf56fa7
+  199  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  200  find ArjunaCore/ -name BasicAction.java
+  201  vi x
+  202  git co bc9a3668c4ed6e8c52f6b2c3d4596e115c12ccf8
+  203  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  204  vi x
+  205  vi ArjunaCore/arjuna/pom.xml 
+  206  git co JBTM-1488
+  207  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debug
+  208  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  209  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debug
+  210  vi x
+  211  vi y
+  212  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  213  vi x.java
+  214  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest#timeoutTest -Dmaven.surefire.debug
+  215  systemctl suspend -i
+  216  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest#heuristicRollbackTest -Dmaven.surefire.debug
+  217  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest#heuristicRollbackTest -Dmaven.surefire.debugx
+  218  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest#inFlightTest -Dmaven.surefire.debugx
+  219  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  220  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=timeoutTest -Dmaven.surefire.debug
+  221  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest#timeoutTest -Dmaven.surefire.debug
+  222  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  223  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debug
+  224  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  225  git st
+  226  git co master
+  227  git remote -v
+  228  git pull --rebase upstream master
+  229  git br JBTM-2926
+  230  git co JBTM-2926
+  231  git status
+  232  git add ArjunaJTA/jta/tests/classes/com/hp/mwtests/ts/jta/stats/
+  233  ls ArjunaJTA/jta/tests/classes/com/hp/mwtests/ts/jta/stats/
+  234  ls -a ArjunaJTA/jta/tests/classes/com/hp/mwtests/ts/jta/stats/
+  235  pwd
+  236  ./build.sh install -DskipTests
+  237  ./build.sh test -f ArjunaJTA/jta/pom.xml -Dtest=StatSuccessUnitTest -Dmaven.surefire.debugx
+  238  ./build.sh test -f ArjunaCore/arjuna/pom.xml 
+  239  git st
+  240  git add -u
+  241  git st
+  242  git commit -m "JBTM-2926 Spurious stats for heuristics"
+  243  git push origin JBTM-2926
+  244  systemctl suspend -i
+  245  pwd
+  246  tree rts/sra/src/
+  247  ssh narayanaci1.eng.hst.ams2.redhat.com
+  248  pwd
+  249  ssh narayanaci1.eng.hst.ams2.redhat.com
+  250  pwd
+  251  cd ../../swarm/wildfly-swarm
+  252  ls
+  253  vi pom.xml 
+  254  find . -name pom.xml -exec grep -l narayana {} \;
+  255  vi fractions/javaee/transactions/pom.xml 
+  256  vi fractions/javaee//pom.xml 
+  257  pwd
+  258  ls
+  259  vi boms/pom.xml 
+  260  cd fractions/
+  261  ls
+  262  ls microprofile/
+  263  ls
+  264  cd javaee/
+  265  ls
+  266  cd transactions/
+  267  ls
+  268  vi module.conf 
+  269  vi module-rewrite.conf 
+  270  ls
+  271  vi pom.xml 
+  272  vi ../../../pom.xml 
+  273  pwd
+  274  cd /home/mmusgrov/work/source/forks/swarm/wildfly-swarm
+  275  git remot -v
+  276  git remote -v
+  277  git pull --rebase origin master
+  278  vi pom.xml 
+  279  pwd
+  280  find . -name pom.xml -exec grep -l "10.1.0.Final" {} \;
+  281  vi build-parent/pom.xml 
+  282  pwd
+  283  find . -type f -exec grep -l "swarm.transactions.object-store-path" {} \;
+  284  cat ./fractions/javaee/transactions/target/classes/META-INF/configuration-meta.properties
+  285  vi ./fractions/javaee/transactions/target/classes/META-INF/configuration-meta.properties
+  286  vi build-parent/pom.xml 
+  287  pwd
+  288  ls -l /tmp/wildfly-
+  289  ls -l /tmp/wildfly-*
+  290  pwd
+  291  vi build-parent/pom.xml 
+  292  ls
+  293  vi README.md 
+  294  vi pom.xml 
+  295  mvn clean install -DskipTests
+  296  pwd
+  297  ls
+  298  gitg
+  299  pwd
+  300  mvn clean install -DskipTests
+  301  pwd
+  302  vi build-parent/pom.xml 
+  303  ls
+  304  find . -name transactions -type d
+  305  vi fractions/javaee/transactions/src/main/java/org/wildfly/swarm/transactions/TransactionsProperties.java 
+  306  vi fractions/javaee/transactions/src/main/java/org/wildfly/swarm/transactions/TransactionsFraction.java 
+  307  vi fractions/javaee/transactions/src/main/java/org/wildfly/swarm/transactions/detect/TransactionsPackageDetector.java 
+  308  pwd
+  309  cd ../../narayana/quickstart/rts/lra/
+  310  ls
+  311  vi trip-controller/src/main/java/participant/api/ActivityController.java 
+  312  systemctl suspend -i
+  313  pwd
+  314  vi trip-controller/src/main/java/participant/api/ActivityController.java 
+  315  git remote -v
+  316  git st
+  317  gitg
+  318  git log --oneline -6
+  319  git co 1df7216
+  320  pwd
+  321  ls
+  322  gitg
+  323  bg
+  324  ls
+  325  find . -name TripController.java
+  326  vi ./src/main/java/participant/demo/TripController.java
+  327  git co master
+  328  git log -8
+  329  git remote -v
+  330  git pull --rebase upstream master
+  331  gitg
+  332  bg
+  333  git co e2514c4bb3e2b80f0230cf8c40007aa395cb1875
+  334  vi ./src/main/java/participant/demo/TripController.java
+  335  find . -name \*.java -exec grep -l terminal {} \;
+  336  git co master
+  337  find . -name \*.java -exec grep -l terminal {} \;
+  338  vi ./src/main/java/participant/demo/TripController.java
+  339  git co e2514c4bb3e2b80f0230cf8c40007aa395cb1875
+  340  vi ./src/main/java/participant/demo/TripController.java
+  341  git co e2514c4bb3e2b80f0230cf8c40007aa395cb1875
+  342  vi src/main/java/participant/demo/FlightController.java 
+  343  vi src/main/java/participant/service/FlightService.java 
+  344  vi src/main/java/participant/service/BookingStore.java 
+  345  vi src/main/java/participant/demo/Compensator.java 
+  346  vi src/main/java/participant/demo/FlightController.java 
+  347  find src/main/java/participant/ -name \*.java -exec grep -l PROVIS {} \;
+  348  vi src/main/java/participant/model/Booking.java src/main/java/participant/service/TripService.java
+  349  vi src/main/java/participant/demo/FlightController.java 
+  350  find ~/docs/admin/ -name carol
+  351  ls /home/mmusgrov/docs/admin/finance/carol
+  352  find ~/docs/admin/ -name \*carol\*
+  353  vi /home/mmusgrov/docs/admin/finance/carol_text_return_14.txt
+  354  ls /home/mmusgrov/docs/admin/finance/carol
+  355  find ~/docs/admin/ -name \*Carol\*
+  356  evince /home/mmusgrov/docs/admin/finance/CarolTaxReturn12.pdf
+  357  pwd
+  358  git co master
+  359  git st
+  360  git diff src/main/java/participant/demo/Compensator.java
+  361  git st
+  362  git diff src/main/java/participant/demo/Compensator.java
+  363  git st
+  364  git diff src/main/java/participant/api/ActivityController.java
+  365  git st
+  366  git diff src/main/java/participant/api/ActivityController.java
+  367  git stash list
+  368  git st
+  369  git diff src/main/java/participant/api/ActivityController.java
+  370  git st
+  371  git diff src/main/java/participant/demo/Compensator.java
+  372  git st
+  373  pwd
+  374  vncviewer http://narayanaci1.eng.hst.ams2.redhat.com:5900 
+  375  vncviewer mmmusgrov@http://narayanaci1.eng.hst.ams2.redhat.com:5900 
+  376  pwd
+  377  gitg
+  378  systemctl suspend -i
+  379  ping narayanaci1.eng.hst.ams2.redhat.com
+  380  vncviewer mmmusgrov@http://narayanaci1.eng.hst.ams2.redhat.com:5900 
+  381  vncviewer http://narayanaci1.eng.hst.ams2.redhat.com:5900 
+  382  vncviewer narayanaci1.eng.hst.ams2.redhat.com:5900 
+  383  vncviewer hudson@narayanaci1.eng.hst.ams2.redhat.com:5900 
+  384  vncviewer narayanaci1.eng.hst.ams2.redhat.com:5900 
+  385  man vncviewer
+  386  vncviewer -SecurityTypes VncAuth narayanaci1.eng.hst.ams2.redhat.com:5900 
+  387  vi ~/docs/notes
+  388  vi x
+  389  ls ~/bin/toc*
+  390  ls ~/bin/*toc*
+  391  vi /home/mmusgrov/source/forks/narayana/quickstart/rts/lra/README.adoc 
+  392  pwd
+  393  gitg
+  394  cd /home/mmusgrov/source/forks/narayana/quickstart/rts/lra
+  395  . ~/.bashrc
+  396  cd /home/mmusgrov/work/source/forks/narayana/master/rts/lra
+  397  vi 0009-LRA.md 
+  398  pwd
+  399  killall chrome
+  400  clear
+  401  vi ~/Music/notes 
+  402  nautilus ~/Downloads/WhatsApp\ Image\ 2017-10-13\ at\ 17.06.17.jpeg 
+  403  vi 0009-LRA.md 
+  404  fg
+  405  sudo kill 1072
+  406  sudo vbox stop
+  407  VBoxManage controlvm pause
+  408  VBoxManage 
+  409  virtualbox 
+  410  vi 0009-LRA.md 
+  411  cmd pandoc
+  412  grep pandoc *
+  413  pwd
+  414  find . -type f -exec grep -l pandoc {} \;
+  415  grep pandoc ~/docs /*
+  416  vi 0009-LRA.md 
+  417  cmd cp
+  418  cp 0009-LRA.md /home/mmusgrov/work/source/forks/narayana/microprofile-sandbox/proposals/0009-LRA
+  419  cd /home/mmusgrov/work/source/forks/narayana/microprofile-sandbox
+  420  git log |more
+  421  ssh narayanaci1.eng.hst.ams2.redhat.com
+  422  pwd
+  423  vi proposals/0009-LRA/0009-LRA.md
+  424  vi ~/x
+  425  pwd
+  426  git log >> ~/x
+  427  vi ~/x
+  428  cd source/forks/narayana/quickstart
+  429  export WORKSPACE=`pwd`
+  430  export JBOSS_HOME=/home/mmusgrov/source/forks/narayana/master/jboss-as/build/target/wildfly-11.0.0.Alpha1-SNAPSHOT
+  431  mvn clean install
+  432  export NARAYANA_CURRENT_VERSION=5.7.0.Final
+  433  mvn clean install
+  434  cd
+  435  cd tmp
+  436  ls
+  437  git clone https://github.com/vert-x3/vertx-examples/tree/master/openshift3-examples
+  438  git clone https://github.com/vert-x3/vertx-examples
+  439  pwd
+  440  curl -X GET http://localhost:8080/api/theatre
+  441  curl -X GET http://localhost:8082/api/theatre
+  442  pwd
+  443  cd /home/mmusgrov/source/forks/narayana/quickstart/
+  444  ls
+  445  vi README.md 
+  446  head y
+  447  vi y
+  448  tail -r y > z
+  449  man tail
+  450  vi y
+  451  vi ~/Music/notes 
+  452  clea
+  453  clear
+  454  https://developers.redhat.com/promotions/building-reactive-microservices-in-java
+  455  ls ~/Downloads/
+  456  nautilus ~/Downloads/
+  457  mv ~/Downloads/building_reactive_microservices_in_java.pdf  ~/docs/books/
+  458  evince ~/docs/books/building_reactive_microservices_in_java.pdf &
+  459  vi x
+  460  cmd tmux
+  461  tmux attach -t base2
+  462  view /home/mmusgrov/work/source/forks/narayana/master/rts/lra/0009-LRA.md 
+  463  view /home/mmusgrov/work/source/forks/narayana/master/rts/lra/0009-LRA.md.backu 
+  464  killall chrome
+  465  top
+  466  killall chrome
+  467  clear
+  468  cd /home/mmusgrov/work/source/forks/narayana/microprofile-sandbox
+  469  git remote -v
+  470  git pull --rebase mmusgrov 0009-LRA
+  471  gitg
+  472  git push origin 0009-LRA
+  473  git push origin 0009-LRA -f
+  474  pwd
+  475  git rebase -i 8a7b7ec6d466fd8e49b98ac4a28cdaee48869063
+  476  git st
+  477  vi proposals/0009-LRA/0009-LRA.md
+  478  git rebase --abort
+  479  git remote -v
+  480  git push origin master
+  481  git co master
+  482  git remote -v
+  483  git pull --rebase origin master
+  484  ls
+  485  ls proposals/
+  486  pwd
+  487  git remote -v
+  488  git pull --rebase origin 0009-LRA 
+  489  git push origin master
+  490  pwd
+  491  git pull origin master
+  492  vi proposals/0009-LRA/0009-LRA.md
+  493  git st
+  494  git add proposals/0009-LRA/0009-LRA.md
+  495  git commit -m "
+  496  0009-LRA Fix broken links"
+  497  git log -2
+  498  git remote -v
+  499  git push origin master
+  500  vi proposals/0009-LRA/0009-LRA.md
+  501  git st
+  502  git add -u
+  503  git commit -m "
+  504  0009-LRA broken links"
+  505  git log --oneline -5
+  506  git rebase -i a528eb7
+  507  cmd push
+  508  git push origin master -f
+  509  git remote -v
+  510  git br 0009-LRA
+  511  git br -D 0009-LRA
+  512  git br 0009-LRA
+  513  git co 0009-LRA
+  514  git remote -v
+  515  git push origin 0009-LRA -f
+  516  pwd
+  517  vi ~/docs/notes1
+  518  cd /home/mmusgrov/work/source/forks/narayana/microprofile-sandbox
+  519  git commit --amend 
+  520  git log -2
+  521  git log --oneline
+  522  git rebase -i 8a7b7ec
+  523  git rebase --abort
+  524  git rebase -i 8a7b7ec
+  525  git rebase --abort
+  526  git rebase -i 8a7b7ec
+  527  vi proposals/0009-LRA/0009-LRA.md1
+  528  grep HEAD proposals/0009-LRA/*
+  529  vi proposals/0009-LRA/0009-LRA.md
+  530  git rebase --skip
+  531  git rebase --continue
+  532  git st
+  533  git diff proposals/0009-LRA/0009-LRA.md
+  534  git diff proposals/0009-LRA/0009-LRA.md >diff1
+  535  git add proposals/0009-LRA/0009-LRA.md1
+  536  git rebase --continue
+  537  vi proposals/0009-LRA/0009-LRA.md
+  538  git rebase --abort
+  539  cp proposals/0009-LRA/0009-LRA.md proposals/0009-LRA/0009-LRA.md.latest
+  540  git rebase -i 8a7b7ec
+  541  git rebase --abort
+  542  git log >> ~/x
+  543  git log --oneline > y
+  544  vi y
+  545  git rebase -i 8a7b7ec
+  546  git rebase --abort
+  547  git log > x
+  548  vi x
+  549  git rebase -i 8a7b7ec
+  550  git rebase --abort
+  551  git rebase -i 8a7b7ec
+  552  vi proposals/0009-LRA/0009-LRA.md
+  553  git st
+  554  git add -u
+  555  git rebase --continue
+  556  vi proposals/0009-LRA/0009-LRA.md
+  557  git add -u
+  558  git rebase --continue
+  559  vi proposals/0009-LRA/0009-LRA.md
+  560  git rebase --continue
+  561  git add -u
+  562  git rebase --continue
+  563  vi proposals/0009-LRA/0009-LRA.md
+  564  git add -u; git rebase --continue
+  565  vi proposals/0009-LRA/0009-LRA.md
+  566  git add -u; git rebase --continue
+  567  vi proposals/0009-LRA/0009-LRA.md
+  568  git add -u; git rebase --continue
+  569  vi proposals/0009-LRA/0009-LRA.md
+  570  git add -u; git rebase --continue
+  571  vi proposals/0009-LRA/0009-LRA.md
+  572  git add -u; git rebase --continue
+  573  git log --oneline
+  574  diff proposals/0009-LRA/0009-LRA.md proposals/0009-LRA/0009-LRA.md.latest 
+  575  gitg
+  576  bg 
+  577  git rebase -i 5d14d196da6771b512
+  578  fg
+  579  git log > x
+  580  vi x
+  581  history > x
+  582  vi x
+  583  git log 
+  584  git log --oneline
+  585  git rebase -i 8a7b7ec
+  586  gitg
+  587  git status
+  588  ls proposals/0009-LRA/*.png
+  589  git remote -v
+  590  git push origin master
+  591  pwd
+  592  cd
+  593  cd junk
+  594  ls
+  595  pwd
+  596  cd tmp
+  597  ls
+  598   git clone https://github.com/wildfly-swarm/tutorial.git
+  599  ls
+  600  cd tutorial/
+  601  ls
+  602  tree microservice/
+  603  pwd
+  604  cd ..
+  605  git clone https://github.com/rsriniva/hello-swarm
+  606  cd hello-swarm/
+  607  ls
+  608  tree src/
+  609  cat Dockerfile 
+  610  pwd
+  611  ls
+  612  cd /home/mmusgrov/source/forks/narayana/quickstart/STM/vertx/swarm1/hello-swarm
+  613  ls
+  614  vi notes
+  615  pwd
+  616  ls
+  617  vi Dockerfile 
+  618  ls target/
+  619  ls target/hello-swarm.jar
+  620  evince ~/docs/specs/WS-LRA.pdf &
+  621  vi x
+  622  cmd tmux
+  623  tmux attach -t base2
+  624  tmux attach -t base3
+  625  tmux attach -t base2
+  626  cd
+  627  tar -xvf dump.tar 
+  628  cat dump/workspaces 
+  629  pwd
+  630  mv cijob.txt dump
+  631  rm dump.tar 
+  632  tar -cf dump.tar dump
+  633  pwd
+  634  ls dump
+  635  pwd
+  636  cd source/forks/narayana/microprofile-sandbox/
+  637  ls
+  638  git log -1
+  639  git log -4
+  640  pwd
+  641  ls
+  642  cd forks/narayana/
+  643  ls
+  644  cd legacy-jbossts-anonsvn-mirror
+  645  ls
+  646  find . -name ThreadUtil.java
+  647  find . -name ThreadUtil\*
+  648  find . -name BasicAc\*
+  649  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  650  pwd
+  651  git co JBOSSTS_4_5_0_GA
+  652  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  653  git co JBOSSTS_4_3_GA
+  654  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  655  git co JBOSSTS_4_2_GA
+  656  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  657  git co JBOSSTS_4_2_3_GA
+  658  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  659  git co JBOSSTS_4_2_2_GA
+  660  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  661  git co JBOSSTS_4_2_3_GA
+  662  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  663  git co JBOSSTS_4_5_0_GA
+  664  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  665  cmd co
+  666  git co JBOSSTS_4_5_0_GA
+  667  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  668  git co JBOSSTS_4_3_GA
+  669  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  670  pw
+  671  pwd
+  672  git co JBOSSTS_4_2_1_GA
+  673  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  674  git co JBOSSTS_4_5_0_GA
+  675  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  676  git co _childThreads.put
+  677  git co JBOSSTS_4_2_1_GA
+  678  vi ./ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/coordinator/BasicAction.java
+  679  vi ~/Music/notes 
+  680  top
+  681  vi ~/Music/notes 
+  682  vi ~/docs/status/status
+  683  vi ~/Music/notes 
+  684  vi ~/bin/youtube2mp3 
+  685  cd
+  686  cd Downloads/
+  687  lks
+  688  ls
+  689  clear
+  690  ls
+  691  youtube-dl --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=Ikwj7gxemLQ&index=53&list=PLRsbF2sD7JVq8QYW0vlbOS2JuXUWaWMnT
+  692  ls
+  693  nautilus
+  694  kill %1
+  695  ls
+  696  ls *.m*
+  697  mplayer Transactional\ actors\ with\ Eclipse\ Vert.x\ by\ Mark\ Little\ \&\ Michael\ Musgrove-Ikwj7gxemLQ.mp3 
+  698  mv Transactional\ actors\ with\ Eclipse\ Vert.x\ by\ Mark\ Little\ \&\ Michael\ Musgrove-Ikwj7gxemLQ.mp3 ../Music/TransactionalActorsWithVertx.mp3
+  699  clear
+  700  nautilus
+  701  cd source/forks/narayana/
+  702  ls
+  703  cd master
+  704  cd ../quickstart
+  705  ls
+  706  vi notes 
+  707  git co master
+  708  git co JBTM-2889
+  709  git diff STM/pom.xml
+  710  git st
+  711  git diff STM/vertx/pom.xml
+  712  cp STM/pom.xml STM/pom.xml.new
+  713  git co .
+  714  git st
+  715  git status
+  716  git co JBTM-2238
+  717  git st
+  718  gitg
+  719  cd tooling/browser/
+  720  ls
+  721  vi notes readme.txt
+  722  ls
+  723  ls stores/stores/shadow/
+  724  mvn -e compile exec:java -DisJournalStore=false -Dstore.directory=./stores/stores
+  725  ls ~/.m2/repository/org/jboss/narayana/jts/narayana-jts-idlj/
+  726  vi pom.xml
+  727  mvn -e compile exec:java -DisJournalStore=false -Dstore.directory=./stores/stores
+  728  ls ./stores/stores/shadow/
+  729  tree ./stores/stores/shadow/
+  730  tree ./stores/stores/shadow/jts/tx-object-store
+  731  mvn -e compile exec:java -DisJournalStore=false -Dstore.directory=./stores/stores/shadow/jts/tx-object-store
+  732  pwd
+  733  git remote -v
+  734  pwd
+  735  vi pom.xml
+  736  mvn -e compile exec:java -DisJournalStore=false -Dstore.directory=./stores/stores/shadow/jts/tx-object-store
+  737  cp pom.xml pom.xml-
+  738  git co master
+  739  pwd
+  740  git co pom.xml
+  741  git co master
+  742  pwd
+  743  ls
+  744  vi ~/Music/notes 
+  745  ls ~/docs/ grep -i WP 
+  746  ls ~/docs/ | grep -i WP 
+  747  nautilus ~/docs
+  748  cd /home/mmusgrov/products/openshift/minishift2
+  749  ls
+  750  pwd
+  751  cd
+  752  cd docs/books/
+  753  ls
+  754  vi ~/Music/notes 
+  755  pwd
+  756  cd
+  757  cd source/forks/narayana/
+  758  ls
+  759  cd 4.17/
+  760  vi ArjunaCore/arjuna/classes/com/arjuna/ats/arjuna/utils/ThreadUtil.java
+  761  cd ..
+  762  ls
+  763  cd releases/
+  764  ls
+  765  pwd
+  766  cd narayana/
+  767  ls
+  768  cd ../../..
+  769  ls
+  770  pwd
+  771  ls ..
+  772  cd ../jbossts/
+  773  ls
+  774  unzip -l jbossts-jta-4.11.0.Final.zip
+  775  git co jbossts-jta-4.11.0.Final.zip
+  776  unzip  jbossts-jta-4.11.0.Final.zip
+  777  cd JBOSSTS_4_11_0_Final/
+  778  ls
+  779  find . -name ThreadUtil.java
+  780  find . -name ThreadUtil.\*
+  781  vi ./htdocs/com/arjuna/ats/arjuna/utils/ThreadUtil.html
+  782  ls
+  783  cd ..
+  784  ls
+  785  rm -rf JBOSSTS_4_11_0_Final
+  786  cd ..
+  787  ls
+  788  cd forks/
+  789  ls
+  790  cd narayana/
+  791  ls
+  792  pwd
+  793  cd ../..
+  794  find . -name JBOSSTS_4\* -type d
+  795  cd
+  796  cd Downloads/
+  797  ls
+  798  ls -l |grep Oct
+  799  rm watch_leeds_united_live_for_free_359-76f.torrent 
+  800  cmd tmux
+  801  tmux attach -t base3
+  802  cd source/forks/vert-x3/
+  803  ls
+  804  cd vert.x/
+  805  ls src/
+  806  git remote -v
+  807  pwd
+  808  cd source/forks/narayana/performance
+  809  ls
+  810  cd narayana/
+  811  tree ArjunaJTA/jta/
+  812  pwd
+  813  cd ArjunaJTA/jta/etc/
+  814  ls
+  815  clear
+  816  ls
+  817  vi jbossts-properties.xml 
+  818  ls
+  819  vi purpose.txt 
+  820  pwd
+  821  cd ..
+  822  ls
+  823  tree > x
+  824  vi x
+  825  ls
+  826  ls etc/
+  827  grep libA ~/docs/transactions/*
+  828  grep aio ~/docs/transactions/*
+  829  grep -l aio ~/docs/transactions/*
+  830  vi /home/mmusgrov/docs/transactions/x /home/mmusgrov/docs/transactions/ci-files.txt
+  831  pwd
+  832  find /home/mmusgrov/docs/transactions/ -type f -exec  grep -l libaio {} \;
+  833  pwd
+  834  find . -type f -exec  grep -l libaio {} \;
+  835  ls etc/
+  836  vi etc/jbossts-properties.xml 
+  837  ls /usr/lib64/libaio.so.1
+  838  find /usr/lib -name libaio.so
+  839  find /usr/lib -name libaio\*.so
+  840  vi ~/Music/notes 
+  841  vi ~/Downloads/Reactive-Microservices-on-the-JVM-with-Vert-x-by-Burr-Sutter.txt 
+  842  rm ~/Downloads/Reactive-Microservices-on-the-JVM-with-Vert-x-by-Burr-Sutter.txt 
+  843  pwd
+  844  cd
+  845  cd source/
+  846  ls
+  847  cd misc/
+  848  ls
+  849  mkdir fabric8
+  850  cd fabric8/
+  851  vi pom.xml
+  852  vi notes
+  853  mvn io.fabric8:vertx-maven-plugin:1.0.0:setup
+  854  vi pom.xml 
+  855  pwd
+  856  ls
+  857  mv pom.xml pom.xml.bk
+  858  pwd
+  859  vi ~/Music/notes 
+  860  cd 
+  861  cd Downloads/
+  862  mplayer recording.mp4 
+  863  mv recording.mp4 ../Videos/TomLRA.mp4
+  864  mv recording\ \(1\).mp4 ../Videos/MikeSTM.mp4
+  865  mplayer ../Videos/MikeSTM.mp4 &
+  866  fg
+  867  cat /etc/redhat-release 
+  868  vi /home/mmusgrov/source/forks/narayana/conferences/mucon2/fabric8/README.md 
+  869  cmd tmux
+  870  tmux attach -t base2
+  871  vim flight/pom.xml
+  872  pwd
+  873  . ~/.bashrc
+  874  . ~/.bashrc
+  875  . ~/.bashrc
+  876  . ~/.bashrc
+  877  cd /home/mmusgrov/work/source/forks/narayana/conferences/mucon2/demo2
+  878  mvn vertx:run
+  879  pwd
+  880  cd
+  881  cd bin
+  882  grep switch *.sh
+  883  grep esac *.sh
+  884  vi ffind.sh 
+  885  pwd
+  886  cd
+  887  vi x
+  888  cmd tmux
+  889  tmux attach -t base2
+  890  cat bin/tmuxs 
+  891  tmux new -s base
+  892  cmd tmux
+  893   tmux new -s base
+  894  tmux attach -t base
+  895  tmux attach -t base2
+  896  pwd
+  897  . ~/.bashrc
+  898  . ~/.bashrc
+  899  . ~/.bashrc
+  900  . ~/.bashrc
+  901  head x
+  902  vi x
+  903  cmd vi
+  904  pwd
+  905  find . -name \*.swp
+  906  cd /home/mmusgrov/work/docs/conferences/2017/mucon
+  907  vi slidenotes.txt 
+  908  ls /home/mmusgrov/work/docs/conferences/2017/mucon/slidenotes.txt 
+  909  vi ~/Music/notes 
+  910  ls ~/Pictures/
+  911  nautilus
+  912  pwd
+  913  cd
+  914  cd Music/
+  915  ls
+  916  ls ../Videos/
+  917  mv TransactionalActorsWithVertx.mp3 ../Videos/
+  918  ls
+  919  cd ../Videos/
+  920  ls
+  921  nautilus MikeSTM.mp4 &
+  922  cd Videos/
+  923  ls 
+  924  nautilus
+  925  ls
+  926  cd source/forks/narayana/conferences/mucon/
+  927  ls
+  928  pwd
+  929  ls
+  930  mkdir demo
+  931  cd demo/
+  932  mvn vertx:run
+  933  pwd
+  934  cd ~/source/forks/narayana/mu
+  935  cd ~/source/forks/narayana/conferences/mucon/
+  936  ls
+  937  clea
+  938  clear
+  939  pwd
+  940  cd demo/
+  941  head -1 ../cmds 
+  942  mvn io.fabric8:vertx-maven-plugin:1.0.7:setup -DvertxVersion=3.4.2 -Ddependencies=web
+  943  dconf
+  944  gnome-tweak-tool
+  945  vi ~/docs/status/status
+  946  ps -ef |grep pid
+  947  ps -ef |grep pidgi
+  948  killall pidgin
+  949  cd
+  950  cd Downloads/
+  951  ls Mucon2017TransactionalActors.pdf 
+  952  cp Mucon2017TransactionalActors.pdf ~/source/forks/narayana/conferences/mucon/
+  953  vi x
+  954  rm x
+  955  vi x
+  956  vi x
+  957  cd 
+  958  cd Downloads/
+  959  unzip -l eclipselink-2.7.0.v20170811-d680af5.zip 
+  960  unzip eclipselink-2.7.0.v20170811-d680af5.zip 
+  961  cd eclipselink/
+  962  ls
+  963  ls bin/
+  964  ls jlib/
+  965  cd jlib/
+  966  unzip eclipselink-src.zip 
+  967  vi org/eclipse/persistence/sdo/types/SDOWrapperType.java
+  968  vi os.notes
+  969  pwd
+  970  cp os.notes docs/status/
+  971  vi ~/docs/status/status
+  972  pwd
+  973  cd source/forks/narayana/
+  974  cd master
+  975  vi rts/lra/lra-client/src/main/java/io/narayana/lra/client/LRAClient.java 
+  976  vi rts/at/tx/src/main/java/org/jboss/jbossts/star/service/Coordinator.java 
+  977  vi rts/at/tx/pom.xml rts/lra/pom.xml 
+  978  vi pom.xml 
+  979  vi rts/at/tx/pom.xml rts/lra/pom.xml 
+  980  vi rts/lra/lra-client/pom.xml 
+  981  vi rts/pom.xml 
+  982  vi ~/Music/notes 
+  983  killall pidgin
+  984  vi ~/docs/notes
+  985  vi ~/docs/transactions/notes 
+  986  vi ~/docs/notes
+  987  vi ~/docs/transactions/notes 
+  988  vi x
+  989  vi ~/docs/status/status
+  990  vi x
+  991  pwd
+  992  mv x ondra.txt
+  993  cmd tmux
+  994  tmux attach -t base
+  995  tmux attach -t base2
+  996  . ~/.bashrc
+  997  . ~/.bashrc  
+  998  . ~/.bashrc  
+  999  . ~/.bashrc  
+ 1000  vim /home/mmusgrov/source/forks/narayana/microprofile-sandbox/proposals/0009-LRA/README.md
+ 1001  . ~/.bashrc
+ 1002  pwd
+ 1003  ls
+ 1004  cd ..
+ 1005  ls
+ 1006  cp -r demo service
+ 1007  cd service/
+ 1008  ls
+ 1009  mvn clean
+ 1010  vi pom.xml 
+ 1011  ls
+ 1012  rm stm-swarm.iml 
+ 1013  head README.md 
+ 1014  rm README.md 
+ 1015  ls
+ 1016  rm src/main/java/swarm/demo/servlet/MyResource.java 
+ 1017  rm src/main/java/swarm/demo/servlet/Sample*
+ 1018  rm src/main/java/swarm/demo/servlet/HelloServlet.java 
+ 1019  ls
+ 1020  pwd
+ 1021  cd ..
+ 1022  ls
+ 1023  cp ../../mucon2017/pom.xml .
+ 1024  vi pom.xml 
+ 1025  mv demo swarm
+ 1026  ls
+ 1027  cp ../../mucon2017/flight/pom.xml 
+ 1028  vi ../../mucon2017/flight/pom.xml 
+ 1029  ls
+ 1030  pwd
+ 1031  mvn clean 
+ 1032  ls
+ 1033  vi pom.xml 
+ 1034  ls
+ 1035  ls demo/
+ 1036  rmdir demo
+ 1037  ls -a demo/
+ 1038  rm -rf demo
+ 1039  clear
+ 1040  ls
+ 1041  tree .
+ 1042  vi pom.xml */pom.xml
+ 1043  mvn clean 
+ 1044  pwd
+ 1045  ls
+ 1046  mvn package -f service/pom.xml 
+ 1047  mvn install -f service/pom.xml 
+ 1048  pwd
+ 1049  ls
+ 1050  mvn install -f service/pom.xml 
+ 1051  curl -X GET http://localhost:8080/api
+ 1052  curl -X POST http://localhost:8080/api
+ 1053  curl -X GET http://localhost:8080/api
+ 1054  curl -X POST http://localhost:8080/api
+ 1055  curl -X GET http://localhost:8080/api
+ 1056  curl -X POST http://localhost:8080/api
+ 1057  curl -X GET http://localhost:8080/api
+ 1058  pwd
+ 1059  ls
+ 1060  cd vertx/
+ 1061  ls
+ 1062  cd ..
+ 1063  ls
+ 1064  curl -X GET http://localhost:8080/api
+ 1065  curl -X POST http://localhost:8080/api
+ 1066  curl -X GET http://localhost:8080/api
+ 1067  pwd
+ 1068  ls
+ 1069  cd vertx/
+ 1070  ls
+ 1071  tree ObjectStore/
+ 1072  curl -X GET http://localhost:8080/api
+ 1073  tree ObjectStore/
+ 1074  curl -X GET http://localhost:8080/api
+ 1075  curl -X POST http://localhost:8080/api
+ 1076  curl -X GET http://localhost:8080/api
+ 1077  curl -X POST http://localhost:8080/api
+ 1078  curl -X GET http://localhost:8080/api
+ 1079  curl -X POST http://localhost:8080/api
+ 1080  curl -X GET http://localhost:8080/api
+ 1081  curl -X POST http://localhost:8080/api
+ 1082  curl -X GET http://localhost:8080/api
+ 1083  curl -X POST http://localhost:8080/api
+ 1084  curl -X GET http://localhost:8080/api
+ 1085  tree ObjectStore/
+ 1086  curl -X POST http://localhost:8080/api
+ 1087  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_949d_5a0da972_1 
+ 1088  curl -X POST http://localhost:8080/api
+ 1089  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_949d_5a0da972_1 
+ 1090  pwd
+ 1091  mvn clean install -f ../service/pom.xml 
+ 1092  curl -X POST http://localhost:8080/api
+ 1093  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_949d_5a0da972_1 
+ 1094  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_99d3_5a0dadaf_1 
+ 1095  curl -X POST http://localhost:8080/api
+ 1096  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_99d3_5a0dadaf_1 
+ 1097  mvn clean install -f ../service/pom.xml 
+ 1098  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fcf_5a0dae18_1 
+ 1099  curl -X POST http://localhost:8080/api
+ 1100  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fcf_5a0dae18_1 
+ 1101  curl -X GET http://localhost:8080/api
+ 1102  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fcf_5a0dae18_1 
+ 1103  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fd3_5a0daf3f_1 
+ 1104  curl -X POST http://localhost:8080/api
+ 1105  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fd3_5a0daf3f_1 
+ 1106  tree ObjectStore/
+ 1107  mvn clean install -f ../service/pom.xml 
+ 1108  curl -X POST http://localhost:8080/api
+ 1109  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fd3_5a0daf3f_1 
+ 1110  curl -X POST http://localhost:8080/api
+ 1111  curl -X GET http://localhost:8080/api
+ 1112  curl -X POST http://localhost:8080/api
+ 1113  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fd3_5a0daf3f_1 
+ 1114  tree ObjectStore/
+ 1115  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/stm.demo.service.FlightServiceImpl/0_ffffc0a80008_8fd3_5a0daf3f_1 
+ 1116  curl -X POST http://localhost:8080/api
+ 1117  curl -X GET http://localhost:8080/api
+ 1118  curl -X POST http://localhost:8080/api
+ 1119  curl -X GET http://localhost:8080/api
+ 1120  curl -X POST http://localhost:8080/api
+ 1121  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/io.narayana.devconf.TaxiServiceImpl/0_ffffc0a80008_ac13_5a0db7b3_1 
+ 1122  curl -X POST http://localhost:8080/api
+ 1123  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/io.narayana.devconf.TaxiServiceImpl/0_ffffc0a80008_ac13_5a0db7b3_1 
+ 1124  tree ObjectStore/
+ 1125  curl -X POST http://localhost:8080/api
+ 1126  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/io.narayana.devconf.TaxiServiceImpl/0_ffffc0a80008_ac13_5a0db7b3_1 
+ 1127  tree ObjectStore/
+ 1128  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/io.narayana.devconf.TaxiServiceImpl/0_ffffc0a80008_ac13_5a0db7b3_1 
+ 1129  curl -X POST http://localhost:8080/api
+ 1130  ls -l ObjectStore/ShadowNoFileLockStore/defaultStore/StateManager/LockManager/io.narayana.devconf.TaxiServiceImpl/0_ffffc0a80008_ac13_5a0db7b3_1 
+ 1131  curl -X POST http://localhost:8080/api
+ 1132  curl -X GET http://localhost:8080/api
+ 1133  curl -X POST http://localhost:8080/api
+ 1134  curl -X GET http://localhost:8080/api
+ 1135  curl -X POST http://localhost:8080/api
+ 1136  curl -X GET http://localhost:8080/api
+ 1137  curl -X POST http://localhost:8080/api
+ 1138  tree ObjectStore/
+ 1139  curl -X POST http://localhost:8080/api
+ 1140  curl -X GET http://localhost:8080/api
+ 1141  tree ObjectStore/
+ 1142  curl -X GET http://localhost:8080/api
+ 1143  tree ObjectStore/
+ 1144  curl -X POST http://localhost:8080/api
+ 1145  curl -X GET http://localhost:8080/api
+ 1146  curl -X POST http://localhost:8080/api
+ 1147  curl -X GET http://localhost:8080/api
+ 1148  curl -X POST http://localhost:8080/api
+ 1149  curl -X GET http://localhost:8080/api
+ 1150  curl -X POST http://localhost:8080/api
+ 1151  curl -X GET http://localhost:8080/api
+ 1152  pwd
+ 1153  vi ../pom.xml 
+ 1154  pwd
+ 1155  vi pom.xml 
+ 1156  curl -X POST http://localhost:8080/api
+ 1157  curl -X GET http://localhost:8080/api
+ 1158  pwd
+ 1159  cd ../swarm/
+ 1160  ls
+ 1161  history > x

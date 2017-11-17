@@ -1,9 +1,11 @@
-package swarm.demo.servlet;
+package io.narayana.devconf;
 
 import org.jboss.stm.annotations.ReadLock;
+import org.jboss.stm.annotations.State;
 import org.jboss.stm.annotations.WriteLock;
 
-public class FlightServiceImpl implements FlightService {
+public class TaxiServiceImpl implements TaxiService {
+    @State
     private int numberOfBookings;
 
     @Override

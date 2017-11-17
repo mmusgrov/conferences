@@ -20,84 +20,35 @@
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
 
-package swarm.demo.servlet;
+package io.narayana.devconf;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-import com.arjuna.ats.arjuna.AtomicAction;
-import org.jboss.stm.Container;
-
-/**
- * @author nmcl
- */
-
 @Path("/")
 @ApplicationScoped
-public class MyResource {
-//    @Inject
-    private Container<FlightService> container;
-
-//    @Inject
-    private FlightService flightService;
+public class MainResource {
+    private TaxiService taxiService;
 
     @PostConstruct
     private void postConstruct() {
-        container = new Container<>();
-        flightService = container.create(new FlightServiceImpl());
+        taxiService = Helper.getTaxiService();
     }
 
-    @GET
-    @Produces("text/plain")
-    public String init() throws Exception {
-//        flightService = new FlightServiceImpl();
-
-        return "Active";
-    }
-
-    @Path("bookings")
+    @Path("api")
     @GET
     @Produces("text/plain")
     public int getNumberOfBookings() throws Exception {
-        return flightService.getNumberOfBookings();
+        return taxiService.getNumberOfBookings();
     }
 
-    @Path("bookings")
+    @Path("api")
     @POST
     public void makeBooking() throws Exception {
-        flightService.makeBooking("BA123");
-    }
-
-    @Path("stm")
-    @POST
-    @Produces("text/plain")
-    public String stm() throws Exception  // dummy method name for now
-    {
-	/*
-	 * STM states are identified by Uids in the ObjectStore. This is an example.
-	 */
-
-	Container<Sample> theContainer = new Container<Sample>("Demo", Container.TYPE.PERSISTENT, Container.MODEL.SHARED);
-	Sample obj1 = theContainer.create(new SampleLockable(10));
-	String str = "Object name: "+theContainer.getIdentifier(obj1)+"\n";
-
-	for (int i = 0; i < 10; i++) {
-	    AtomicAction A = new AtomicAction();
-
-	    A.begin();
-
-	    obj1.increment();
-
-	    str += "Transaction value hello" + obj1.value() + "\n";
-
-	    A.commit();
-	}
-
-	return str;
+        taxiService.makeBooking("BA123");
     }
 }

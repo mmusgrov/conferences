@@ -2,8 +2,9 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.narayana</groupId>
-  <artifactId>devconf</artifactId>
+  <groupId>io.narayana.quickstart.stm</groupId>
+  <artifactId>stm-demo-vertx</artifactId>
+  <name>STM Demo Vertx</name>
   <version>1.0</version>
   <properties>
     <vertx.version>3.4.2</vertx.version>
@@ -12,6 +13,10 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <runArgs.flights>false</runArgs.flights>
+    <store.dir>/tmp/data</store.dir>
+    <java.tool.options>-DObjectStoreEnvironmentBean.objectStoreDir=${store.dir} -DObjectStoreEnvironmentBean.stateStore.objectStoreDir=${store.dir} -DObjectStoreEnvironmentBean.communicationStore.objectStoreDir=${store.dir}</java.tool.options>
+
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -29,14 +34,41 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-core</artifactId>
     </dependency>
+    <!-- HTTP based services -->
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
     </dependency>
+    <!-- clustering vertx -->
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-hazelcast</artifactId>
     </dependency>
+    <!-- fault tolerance -->
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-circuit-breaker</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.vertx</groupId>
+      <artifactId>vertx-service-discovery</artifactId>
+    </dependency>
+
+      <dependency>
+          <groupId>io.narayana.quickstart.stm</groupId>
+          <artifactId>stm-demo-service</artifactId>
+          <version>1.0.0-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.narayana.stm</groupId>
+          <artifactId>stm</artifactId>
+          <version>5.7.2.Final-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+          <groupId>org.jboss.logging</groupId>
+          <artifactId>jboss-logging</artifactId>
+          <version>3.3.1.Final</version>
+      </dependency>
   </dependencies>
   <build>
     <plugins>
@@ -57,6 +89,10 @@
           <redeploy>true</redeploy>
           <runArgs>
             <runArg>--cluster</runArg>
+            <runArg>-Dflights=${runArgs.flights}</runArg>
+            <runArg>-DObjectStoreEnvironmentBean.objectStoreDir=${store.dir}</runArg>
+            <runArg>-DObjectStoreEnvironmentBean.stateStore.objectStoreDir=${store.dir}</runArg>
+            <runArg>-DObjectStoreEnvironmentBean.communicationStore.objectStoreDir=${store.dir}</runArg>
           </runArgs>
         </configuration>
       </plugin>
