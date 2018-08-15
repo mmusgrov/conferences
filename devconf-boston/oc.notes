@@ -1,0 +1,13 @@
+ minishift start
+ cd /home/mmusgrov/src/forks/narayana/conferences/devconf-boston
+ oc get projects
+ oc new-project transactionsmicroservices
+ minishift console &
+ oc login -u system:admin
+ oc get pv
+ oc get PersistentVolumeClaim
+ oc delete PersistentVolumeClaim flight-lra-coordinator-logs
+ oc delete PersistentVolumeClaim lra-coordinator-logs
+# create pv for storage
+ vi pv.yaml
+ oc create -f pv.yaml 

@@ -1,0 +1,10 @@
+apiVersion: "v1"
+kind: "PersistentVolumeClaim"
+metadata:
+  name: "flight-lra-coordinator-logs"
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "100Mi"
