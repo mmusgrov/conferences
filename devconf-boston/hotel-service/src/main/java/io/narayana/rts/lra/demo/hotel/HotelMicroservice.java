@@ -21,15 +21,15 @@
  */
 package io.narayana.rts.lra.demo.hotel;
 
-import io.narayana.lra.annotation.Compensate;
-import io.narayana.lra.annotation.CompensatorStatus;
-import io.narayana.lra.annotation.Complete;
-import io.narayana.lra.annotation.LRA;
-import io.narayana.lra.annotation.Status;
-import io.narayana.lra.client.NarayanaLRAClient;
 import io.narayana.rts.lra.demo.model.Booking;
 import io.narayana.rts.lra.demo.model.BookingStore;
 import io.narayana.rts.lra.demo.model.BookingStores;
+import org.eclipse.microprofile.lra.annotation.Compensate;
+import org.eclipse.microprofile.lra.annotation.CompensatorStatus;
+import org.eclipse.microprofile.lra.annotation.Complete;
+import org.eclipse.microprofile.lra.annotation.LRA;
+import org.eclipse.microprofile.lra.annotation.Status;
+import org.eclipse.microprofile.lra.client.LRAClient;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -61,7 +61,7 @@ public class HotelMicroservice {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @LRA
-    public Booking reserve(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String bookingId, @QueryParam("name") String name) {
+    public Booking reserve(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String bookingId, @QueryParam("name") String name) {
         traceRequest();
         Booking booking = new Booking(bookingId, name);
         getStore().add(booking);
@@ -82,7 +82,7 @@ public class HotelMicroservice {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/complete")
     @Complete
-    public Booking complete(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String bookingId) {
+    public Booking complete(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String bookingId) {
         traceRequest();
         return getStore().update(bookingId, Booking.BookingStatus.CONFIRMED);
     }
@@ -91,7 +91,7 @@ public class HotelMicroservice {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/compensate")
     @Compensate
-    public Booking compensate(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String bookingId) {
+    public Booking compensate(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String bookingId) {
         traceRequest();
         return getStore().update(bookingId, Booking.BookingStatus.CANCELLED);
     }
@@ -100,7 +100,7 @@ public class HotelMicroservice {
     @Path("/status")
     @Produces(MediaType.APPLICATION_JSON)
     @Status
-    public CompensatorStatus getStatus(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String bookingId) {
+    public CompensatorStatus getStatus(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String bookingId) {
         traceRequest();
         Booking booking = getStore().get(bookingId);
 

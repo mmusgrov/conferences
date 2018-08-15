@@ -21,12 +21,11 @@
  */
 package io.narayana.rts.lra.demo.tripcontroller;
 
-import io.narayana.lra.annotation.LRA;
-import io.narayana.lra.client.LRAClient;
-import io.narayana.lra.client.NarayanaLRAClient;
 import io.narayana.rts.lra.demo.model.Booking;
 import io.narayana.rts.lra.demo.model.BookingStore;
 import io.narayana.rts.lra.demo.model.BookingStores;
+import org.eclipse.microprofile.lra.annotation.LRA;
+import org.eclipse.microprofile.lra.client.LRAClient;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -70,7 +69,7 @@ public class TripMicroservice {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @LRA(delayClose = true, join = false)
-    public Booking reserve(@HeaderParam(NarayanaLRAClient.LRA_HTTP_HEADER) String bookingId) throws UnsupportedEncodingException {
+    public Booking reserve(@HeaderParam(LRAClient.LRA_HTTP_HEADER) String bookingId) throws UnsupportedEncodingException {
         Booking theGrand = initiateBooking("hotel-TheGrand");
         Booking firstClass = initiateBooking("flight-firstClass");
         Booking economy = initiateBooking("flight-economy");
