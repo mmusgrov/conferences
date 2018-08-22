@@ -1,21 +1,22 @@
 package io.narayana.devconf;
 
+
 import org.jboss.stm.annotations.ReadLock;
 import org.jboss.stm.annotations.State;
 import org.jboss.stm.annotations.WriteLock;
 
 public class FlightServiceImpl implements FlightService {
-//    @State
+    @State
     private int numberOfBookings;
 
     @Override
-//    @ReadLock
+    @ReadLock
     public int getNumberOfBookings() {
         return numberOfBookings;
     }
 
     @Override
-//    @WriteLock
+    @WriteLock
     public void makeBooking(String details) {
         numberOfBookings += 1;
     }
