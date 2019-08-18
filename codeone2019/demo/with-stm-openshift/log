@@ -1,0 +1,5 @@
+
+LockManager::initialise() exception: ARJUNA012225: FileSystemStore::setupStore - cannot access root of object store: /deployments/ObjectStore/ShadowingStore//StateManager/LockManager/org.acme.quickstart.FlightServiceImpl/
+
+
+/deployments/data/tx-object-store/ShadowNoFileLockStore/defaultStore/STMDemos

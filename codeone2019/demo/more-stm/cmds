@@ -1,0 +1,4 @@
+# bonus app (composing transactions)
+./mvnw clean package quarkus:dev -f more-stm/pom.xml &
+
+curl -XPOST http://localhost:8080/trip?fail=true

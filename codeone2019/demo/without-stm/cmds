@@ -1,0 +1,7 @@
+./mvnw clean package quarkus:dev -f without-stm/pom.xml &
+
+curl -XPOST http://localhost:8080/stm
+java -jar stress/target/codeone-stress-1.0.jar requests=100 parallelism=50 url=/stm
+curl -XGET http://localhost:8080/stm
+
+The booking count should be corrupted.

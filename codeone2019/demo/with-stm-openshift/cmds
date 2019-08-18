@@ -1,0 +1,22 @@
+
+rm -rf ~/.minishift ~/.kube
+minishift start --vm-driver=virtualbox
+oc login -u developer -p developer
+oc delete project stmdemo
+
+export APP=with-persistence
+oc new-project stmdemo
+oc new-build --binary --name=${APP} -l app=${APP}
+oc start-build ${APP} --from-dir=. --follow
+oc new-app ${APP} -l app=${APP}
+. ../pv.sh
+oc set volume dc/${APP} --add --type pvc --claim-name stm-logs --mount-path /deployments/data
+oc expose service ${APP}
+oc get route
+
+curl -XGET http://with-persistence-stmdemo.192.168.99.101.nip.io/stm
+curl -XPOST http://localhost:8080/stm
+java -jar ../stress/target/codeone-stress-1.0.jar requests=100 parallelism=50 url=/stm
+
+# scale up and show the POST request going to different pods showing sharing of the booking count state
+# scale down to zero and back up again showing persistence of the booking count state
