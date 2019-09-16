@@ -19,14 +19,11 @@ class FlightServiceFactory {
     private static String stmDemoUid = "0:ffffc0a80008:8ac3:5a0de48d:2";
     private static String type = "/STMDemos";
 
-    private Container<FlightService> flightContainer;
     private FlightService flightService;
-    private String uid;
 
     public FlightServiceFactory() {
-        flightContainer = new Container<>(Container.TYPE.PERSISTENT, Container.MODEL.SHARED);
-
-        uid = readSharedUid();
+        String uid = readSharedUid();
+        Container<FlightService> flightContainer = new Container<>(Container.TYPE.PERSISTENT, Container.MODEL.SHARED);
 
         if (uid == null) {
             flightService = flightContainer.create(new FlightServiceImpl());
